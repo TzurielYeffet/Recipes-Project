@@ -5,9 +5,9 @@ const recipeRouter = require("./routes/recipeRoutes.js");
 const PORT = 3000
 
 const app = express()
-app.use(express.json)
+app.use(express.json())
 app.use(logger)
-app.use("/api",recipeC)
+app.use("/api",recipeRouter)
 
 
 

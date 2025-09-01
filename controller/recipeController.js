@@ -30,6 +30,8 @@ const getRecepieById = async (req, res, next) => {
 };
 
 const getRecipesByQuery = async (req, res, next) => {
+console.log("Inside recipeController getRecipesByQuery");
+
   try {
     const db = await recipeModel.getAllRecepies();
     const allowedFilters = ["title", "description", "tags"];
@@ -86,12 +88,12 @@ const getRecipesByQuery = async (req, res, next) => {
 const addRecipe = async (req, res, next) => {
   try {
     const result = await recipeModel.addRecipe(req.body);
-    if (!result.success) {
+    if (!result.status) {
       const err = new Error("Cannot add new recipe");
       err.status = 415;
       throw err;
     }
-    res.status(201).json(result.data);
+    res.status(201).json(result.recipe);
   } catch (err) {
     next(err);
   }
@@ -100,12 +102,12 @@ const addRecipe = async (req, res, next) => {
 const updateRecipe = async (req, res, next) => {
   try {
     const result = await recipeModel.updateRecipe(req.body);
-    if (!result.success) {
+    if (!result.status) {
       const err = new Error("Recipe not found");
       err.status = 404;
       throw err;
     }
-    res.status(200).json(result.data);
+    res.status(200).json(result.recipe);
   } catch (err) {
     next(err);
   }

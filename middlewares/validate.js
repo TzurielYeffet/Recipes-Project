@@ -1,16 +1,16 @@
 const Ajv = require("ajv");
-const { addFormat } = require("ajv-formats");
+const  addFormats  = require("ajv-formats");
 
 const ajv = new Ajv({ allErrors: true });
-addFormat(ajv);
+addFormats(ajv);
 
 function validate(schema) {
-  const validate = ajv.compile(schema);
+  const validation = ajv.compile(schema);
 
   return (req, res, next) => {
-    const valid = validate(req.body);
+    const valid = validation(req.body);
     if (!valid) {
-      const messages = validateFn.errors
+      const messages = validation.errors
         .map((e) => {
           const field = e.instancePath
             ? e.instancePath.replace(/^\//, "")

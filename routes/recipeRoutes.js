@@ -1,9 +1,10 @@
 const express = require("express")
-const { validate } = require("../middlewares/validate.js")
+const validate  = require("../middlewares/validate.js")
 const recipeController = require("../controller/recipeController.js")
 const { recipeSchema } = require("../validator/recipe.schema.js")
 
 const router = express.Router()
+console.log("Inside recipeRoutes");
 
         
 router.get("/recipes",recipeController.getRecipesByQuery)

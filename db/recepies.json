@@ -1,3 +1,61 @@
 [
-  
+  {
+    "title": "Vegan Salad",
+    "description": "Fresh and healthy salad",
+    "ingredients": ["Lettuce", "Tomatoes", "Olives"],
+    "instructions": ["Chop vegetables", "Mix together", "Serve"],
+    "cookingTime": 10,
+    "servings": 2,
+    "difficulty": "easy",
+    "id": "ba0d5406-2467-416d-9020-e4d9048250d9",
+    "createdAt": "2025-09-01T16:56:41.422Z"
+  },
+  {
+    "title": "Spaghetti Bolognese",
+    "description": "Classic Italian pasta with rich healthy meat sauce",
+    "ingredients": [
+      "Spaghetti",
+      "Ground beef",
+      "Tomato sauce",
+      "Onion",
+      "Garlic"
+    ],
+    "instructions": ["Cook pasta", "Prepare sauce", "Combine and serve"],
+    "cookingTime": 45,
+    "servings": 4,
+    "difficulty": "medium",
+    "id": "afc231fd-a712-4ade-8db6-ab514af4cc14",
+    "createdAt": "2025-09-01T17:57:01.148Z"
+  },
+  {
+    "title": "Quinoa Salad",
+    "description": "Healthy quinoa salad with fresh vegetables and herbs",
+    "ingredients": ["Quinoa", "Cucumber", "Tomatoes", "Parsley", "Lemon juice"],
+    "instructions": [
+      "Cook quinoa",
+      "Chop vegetables",
+      "Mix all ingredients",
+      "Serve chilled"
+    ],
+    "cookingTime": 25,
+    "servings": 3,
+    "difficulty": "easy",
+    "id": "2cabcd65-955b-4b11-912f-54231b8c4a75",
+    "createdAt": "2025-09-01T17:57:38.684Z"
+  },
+  {
+    "title": "Beef Tacos",
+    "description": "Spicy beef tacos with fresh toppings",
+    "ingredients": ["Ground beef", "Taco shells", "Lettuce", "Cheese", "Salsa"],
+    "instructions": [
+      "Cook beef with spices",
+      "Assemble tacos with toppings",
+      "Serve immediately"
+    ],
+    "cookingTime": 30,
+    "servings": 4,
+    "difficulty": "medium",
+    "id": "4d981d8b-3f9c-4d46-862b-4c5a0afced3b",
+    "createdAt": "2025-09-01T17:58:21.681Z"
+  }
 ]

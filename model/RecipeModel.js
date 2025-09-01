@@ -27,11 +27,11 @@ const addRecipe = async (recipe) => {
     recipe.id = id;
     recipe.createdAt = dateCreated;
     recipesArr.push(recipe);
-    fs.promises.writeFile(filePath, JSON.stringify(recipesArr), "utf-8");
+    await fs.promises.writeFile(filePath, JSON.stringify(recipesArr), "utf-8");
     return  {status:true,recipe:recipe};
   } catch (err) {
     console.error(err);
-    return  {status:true,recipe:null};
+    return  {status:false,recipe:null};
   }
 };
 
@@ -48,7 +48,7 @@ const updateRecipe = async (recipe) => {
 
     recipesArr[index] = updatedRecipe;
 
-    fs.promises.writeFile(filePath, recipesArr, "utf-8");
+    await fs.promises.writeFile(filePath, JSON.stringify(recipesArr), "utf-8");
     return {status:true,recipe:updatedRecipe};
   } catch (err) {
     console.error(err);
@@ -61,8 +61,11 @@ const deleteRecipe = async(id)=>{
 
     const recipesArr = await getAllRecepies()
     const index = recipesArr.findIndex(rec => rec.id === id)
+    if(index === -1){
+      return false
+    }
     recipesArr.splice(index,1)
-    fs.promises.writeFile(filePath,recipesArr,"utf-8")
+    await fs.promises.writeFile(filePath,JSON.stringify(recipesArr),"utf-8")
     return true
   }catch(err){
     console.error(err)
