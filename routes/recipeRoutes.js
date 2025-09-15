@@ -1,6 +1,6 @@
 const express = require("express")
 const validate  = require("../middlewares/validate.js")
-const recipeController = require("../controller/recipeController.js")
+const recipeController = require("../controllers/recipeController.js")
 const { recipeSchema } = require("../validator/recipe.schema.js")
 
 const router = express.Router()
